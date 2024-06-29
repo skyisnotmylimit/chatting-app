@@ -1,12 +1,16 @@
 import React from 'react'
 import "./myStyles.css";
 import Sidebar from './Sidebar';
-import WorkArea from './WorkArea';
+import ChatArea from './ChatArea';
+const chatData = {
+  name: "Shubham Gupta",
+  timeStamp: "today",
+}
 function MainContainer() {
   return (
     <div className='main-container'>
-        <Sidebar/>
-        <WorkArea/>
+        <Sidebar/> 
+        <ChatArea props={chatData}/>
     </div>
   )
 }
