@@ -5,7 +5,12 @@ import SendIcon from '@mui/icons-material/Send';
 import "./myStyles.css";
 import MessageOthers from './MessageOthers';
 import MessageSelf from './MessageSelf';
-function ChatArea({props}) {
+const chatData = {
+  name: "Shubham Gupta",
+  timeStamp: "today",
+}
+var props = chatData;
+function ChatArea() {
   return (
     <div className='chatArea-container'>
       <div className='chatArea-header'>
@@ -19,6 +24,10 @@ function ChatArea({props}) {
         </IconButton>
       </div>
       <div className='messages-container'>
+        <MessageOthers/>
+        <MessageSelf/>
+        <MessageOthers/>
+        <MessageSelf/>
         <MessageOthers/>
         <MessageSelf/>
       </div>

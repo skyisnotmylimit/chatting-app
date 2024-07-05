@@ -2,15 +2,19 @@ import React from 'react'
 import "./myStyles.css";
 import Sidebar from './Sidebar';
 import ChatArea from './ChatArea';
-const chatData = {
-  name: "Shubham Gupta",
-  timeStamp: "today",
-}
+import Welcome from './Welcome';
+import CreateGroup from './CreateGroup';
+import UserGroups from './UserGroups';
+import { Outlet } from 'react-router-dom';
 function MainContainer() {
   return (
     <div className='main-container'>
         <Sidebar/> 
-        <ChatArea props={chatData}/>
+        <Outlet/>
+        {/* <ChatArea props={chatData}/> */}
+        {/* <Welcome/> */}
+        {/* <CreateGroup/> */}
+        {/* <UserGroups/> */}
     </div>
   )
 }
