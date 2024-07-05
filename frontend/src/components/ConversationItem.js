@@ -12,5 +12,4 @@ function ConversationItem({props}) {
     </div>
   )
 }
-
 export default ConversationItem

@@ -3,6 +3,7 @@ import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import "./myStyles.css";
+import {useSelector} from 'react-redux';
 import MessageOthers from './MessageOthers';
 import MessageSelf from './MessageSelf';
 const chatData = {
@@ -11,9 +12,10 @@ const chatData = {
 }
 var props = chatData;
 function ChatArea() {
+  const lightTheme = useSelector((state)=>state.themeKey);
   return (
     <div className='chatArea-container'>
-      <div className='chatArea-header'>
+      <div className={'chatArea-header' + ((!lightTheme)?' dark':'')}>
         <p className='con-icon'>{props.name[0]}</p>
         <div className='header-text'>
             <p className='con-title'>{props.name}</p>
@@ -23,7 +25,7 @@ function ChatArea() {
             <DeleteIcon/>
         </IconButton>
       </div>
-      <div className='messages-container'>
+      <div className={'messages-container'+ ((!lightTheme)?' dark':'')}>
         <MessageOthers/>
         <MessageSelf/>
         <MessageOthers/>
@@ -31,8 +33,8 @@ function ChatArea() {
         <MessageOthers/>
         <MessageSelf/>
       </div>
-      <div className='text-input-area'>
-        <input placeholder='Type a message' className='search-box'/> 
+      <div className={'text-input-area'+ ((!lightTheme)?' dark':'')}>
+        <input placeholder='Type a message' className={'search-box'+ ((!lightTheme)?' dark':'')}/> 
         <IconButton>
             <SendIcon/>
         </IconButton>  
